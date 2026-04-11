@@ -1,0 +1,23 @@
+src/
+ ├── domain/              # Núcleo del negocio (independiente de frameworks)
+ │    ├── entities/       # Entidades con reglas de negocio
+ │    ├── value-objects/  # Objetos de valor (inmutables, con validaciones)
+ │    ├── services/       # Lógica de dominio (reglas, cálculos)
+ │    └── repositories/   # Interfaces de acceso a datos (contratos)
+ │
+ ├── application/         # Casos de uso (orquestan el dominio)
+ │    ├── use-cases/      # Ej: CrearUsuario, RegistrarPedido
+ │    └── dto/            # Data Transfer Objects
+ │
+ ├── infrastructure/      # Implementaciones técnicas
+ │    ├── db/             # Conexión a PostgreSQL, ORM o queries
+ │    ├── repositories/   # Implementaciones concretas de los repositorios
+ │    ├── config/         # Configuración (env, logger, etc.)
+ │    └── http/           # Controladores, rutas, middlewares
+ │
+ ├── interfaces/          # Adaptadores externos
+ │    ├── rest/           # Endpoints REST
+ │    ├── graphql/        # (opcional) resolvers GraphQL
+ │    └── cli/            # (opcional) comandos CLI
+ │
+ └── main.ts              # Punto de entrada, inicializa app
